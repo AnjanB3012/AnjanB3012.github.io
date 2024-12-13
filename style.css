@@ -16,7 +16,7 @@ body {
 
 /* Header */
 header {
-    background: url('assets\\banner_image') no-repeat center center/cover;
+    background: url('banner_image') no-repeat center center/cover;
     color: #fff;
     padding-top: 30px;
     min-height: 200px;
