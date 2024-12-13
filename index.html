@@ -1,7 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjan Bellamkonda Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <header>
+        <div class="container">
+            <h1>Anjan Bellamkonda</h1>
+            <p>Future ML Engineer | Virginia Tech General Engineering Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am Anjan Bellamkonda, a General Engineering student at Virginia Tech with an interest in Computer Science and Machine Learning.
+                I enjoy coding, solving analytical problems, and visualizing scientific results. My goal is to become an ML Engineer and provide innovative AI solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>NeuralHire</h3>
+                <p>A startup concept to use AI for smarter resume filtering, leveraging LLM models to evaluate technical and personality traits.</p>
+            </div>
+            <div class="project">
+                <h3>AI Email Summarizer</h3>
+                <p>A tool to summarize Gmail emails using Gemini AI and Azure OpenAI speech services.</p>
+            </div>
+            <div class="project">
+                <h3>Lambert Hacks AI Model</h3>
+                <p>An award-winning AI model integrated with Flask to perform human-like resume reviews.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming: Python, Java</li>
+                <li>AI & Machine Learning</li>
+                <li>Web Development: HTML, CSS, PHP</li>
+                <li>Data Analysis & Visualization</li>
+                <li>Tools: Fusion 360, MATLAB, SQL</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="contact.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Anjan Bellamkonda. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
