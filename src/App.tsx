@@ -71,7 +71,7 @@ function App() {
             <div className="relative mx-auto w-48 h-48 mb-6">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
               <img
-                src="src\banner_photo.jpg"
+                src="https://raw.githubusercontent.com/AnjanB3012/AnjanB3012.github.io/refs/heads/main/src/banner_photo.jpg?token=GHSAT0AAAAAAC3P4MG3D2YKTUBXAAPAXJZ6Z5BD6VA"
                 alt="Profile"
                 className="absolute inset-2 rounded-full object-cover border-4 border-gray-900"
               />
