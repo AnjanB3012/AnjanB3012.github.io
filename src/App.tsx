@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code2, Cpu, Terminal, Database } from 'lucide-react';
+import { BadgeCheck } from "lucide-react";
 
 function App() {
   const sections = useRef<(HTMLElement | null)[]>([]);
@@ -280,8 +281,67 @@ function App() {
         </div>
       </section>
 
+      {/* Credentials Section */}
+      <section
+        ref={el => sections.current[3] = el}
+        className="py-20 opacity-0 transition-opacity duration-1000"
+      >
+        <div className="container mx-auto px-4">
+          <div className="backdrop-blur-lg bg-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            <h2 className="text-4xl font-bold text-white mb-12 text-center relative">
+              Credentials
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Microsoft Certified: Azure AI Engineer Associate",
+                  issuer: "Microsoft",
+                  date: "January 2025"
+                },
+                {
+                  title: "Microsoft Certified: Azure AI Fundamentals",
+                  issuer: "Microsoft",
+                  date: "May 2024"
+                },
+                {
+                  title: "Career Essentials in GitHub Professional Certificate",
+                  issuer: "GitHub & LinkedIn",
+                  date: "December 2024"
+                },
+                {
+                  title: "Building & Deploying Deep Learning Applications with TensorFlow",
+                  issuer: "LinkedIn Learning",
+                  date: "June 2024"
+                },
+                {
+                  title: "Object-Oriented Data Structures in C++",
+                  issuer: "UIUC & Coursera",
+                  date: "April 2025"
+                }
+              ].map((cert, i) => (
+                <div
+                  key={i}
+                  className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                            hover:transform hover:-translate-y-2 transition-all duration-300
+                            border border-transparent hover:border-blue-500/30"
+                >
+                  <div className="flex items-start gap-4 mb-3">
+                    <BadgeCheck className="text-blue-400 mt-1" size={24} />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">{cert.title}</h3>
+                      <p className="text-blue-200 text-sm">{cert.issuer} &middot; {cert.date}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
-      <section ref={el => sections.current[3] = el} className="py-20 opacity-0 transition-opacity duration-1000">
+      <section ref={el => sections.current[4] = el} className="py-20 opacity-0 transition-opacity duration-1000">
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-lg bg-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
             <h2 className="text-4xl font-bold text-white mb-8 text-center relative">
@@ -335,7 +395,7 @@ function App() {
 
       {/* Contact Section */}
       <section
-        ref={el => sections.current[4] = el}
+        ref={el => sections.current[5] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
       >
         <div className="container mx-auto px-4">
