@@ -7,18 +7,18 @@
     <title>Anjan Bellamkonda</title>
     <!-- Debug check for analytics ID -->
     <script>
-      if (!'%VITE_G_ANALYTICS_ID%' || '%VITE_G_ANALYTICS_ID%' === 'undefined') {
+      if (!import.meta.env.VITE_G_ANALYTICS_ID) {
         console.error('Google Analytics ID is missing! Check environment variables and GitHub Secrets.');
       }
     </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_G_ANALYTICS_ID%"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=import.meta.env.VITE_G_ANALYTICS_ID"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '%VITE_G_ANALYTICS_ID%');
+    gtag('config', import.meta.env.VITE_G_ANALYTICS_ID);
     </script>
   </head>
   <body>

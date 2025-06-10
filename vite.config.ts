@@ -8,6 +8,6 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   define: {
-    'process.env.VITE_G_ANALYTICS_ID': JSON.stringify(process.env.VITE_G_ANALYTICS_ID),
+    'import.meta.env.VITE_G_ANALYTICS_ID': JSON.stringify(process.env.VITE_G_ANALYTICS_ID),
   },
 });
