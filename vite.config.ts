@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  define: {
+    'process.env.VITE_G_ANALYTICS_ID': JSON.stringify(process.env.VITE_G_ANALYTICS_ID),
+  },
 });
