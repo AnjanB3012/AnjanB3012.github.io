@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-900">
       {/* Animated background elements */}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.8),rgba(17,24,39,0.4))]"></div>
         {[...Array(20)].map((_, i) => (
           <div
@@ -50,7 +50,7 @@ function App() {
       </div>
 
       {/* Floating tech icons with glow effect */}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
         {[Code2, Cpu, Terminal, Database].map((Icon, i) => (
           <div
             key={i}
@@ -77,7 +77,7 @@ function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full animate-spin-slow opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               <img
                 src="https://avatars.githubusercontent.com/u/147215718?v=4"
-                alt="Profile"
+                alt="Anjan Bellamkonda - ML Engineer and Full Stack Developer"
                 className="absolute inset-2 rounded-full object-cover border-4 border-gray-900 group-hover:border-indigo-500 transition-colors duration-500"
               />
               {/* Animated tech pattern */}
@@ -101,25 +101,26 @@ function App() {
           <p className="text-2xl text-indigo-200 mb-8 font-light">
             ML Engineer | Full Stack Developer
           </p>
-          <div className="flex justify-center gap-8 relative">
+          <nav className="flex justify-center gap-8 relative" aria-label="Social media links">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent h-[1px] -top-4"></div>
-            <a href="https://github.com/AnjanB3012" className="text-white hover:text-indigo-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+            <a href="https://github.com/AnjanB3012" className="text-white hover:text-indigo-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12" aria-label="GitHub profile">
               <Github size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/anjan-bellamkonda/" className="text-white hover:text-indigo-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+            <a href="https://www.linkedin.com/in/anjan-bellamkonda/" className="text-white hover:text-indigo-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12" aria-label="LinkedIn profile">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:anjanbellamkonda@vt.edu" className="text-white hover:text-indigo-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+            <a href="mailto:anjanbellamkonda@vt.edu" className="text-white hover:text-indigo-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12" aria-label="Email contact">
               <Mail size={24} />
             </a>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent h-[1px] -bottom-4"></div>
-          </div>
+          </nav>
           <div className='mt-8'>
             <a 
               href="https://app.enhancv.com/share/fb1b9237/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25 inline-flex items-center gap-2"
+              aria-label="View resume"
             >
               Resume
               <ExternalLink size={16} />
@@ -128,10 +129,12 @@ function App() {
         </div>
       </header>
 
+      <main>
       {/* About Section */}
       <section
         ref={el => sections.current[0] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
+          id="about"
       >
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl relative overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
@@ -153,6 +156,7 @@ function App() {
       <section
         ref={el => sections.current[1] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
+          id="education"
       >
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl relative overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
@@ -162,7 +166,7 @@ function App() {
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
             </h2>
             <div className="space-y-6 text-indigo-100">
-              <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
+                <article className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-2xl font-semibold text-white">Virginia Tech</h3>
@@ -181,14 +185,14 @@ function App() {
                     ))}
                   </div>
                 </div>
-              </div>
+                </article>
             </div>
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section ref={el => sections.current[2] = el} className="py-20 opacity-0 transition-opacity duration-1000">
+        <section ref={el => sections.current[2] = el} className="py-20 opacity-0 transition-opacity duration-1000" id="experience">
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl relative overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5"></div>
@@ -197,7 +201,7 @@ function App() {
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
             </h2>
             <div className="space-y-6 text-indigo-100">
-              <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
+                <article className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
                 <h3 className="text-2xl font-semibold text-white">Embedded Systems and AI Integration Lead - IDPro, Virginia Tech Engineering Education</h3>
                 <p className="text-indigo-200 space-y-2">
                   <span className="block">&#8594;Designed embedded architecture for a wearable device assisting disabled tourists in museums.</span>
@@ -205,9 +209,9 @@ function App() {
                   <span className="block">&#8594;Developed middleware for seamless communication between sensors, processor, and AI outputs.</span>
                   <span className="block">&#8594;Optimized system for low-latency performance on resource-constrained hardware.</span>
                 </p>
-              </div>
+                </article>
 
-              <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
+                <article className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
                 <h3 className="text-2xl font-semibold text-white">AI/ML Research Assistant - IDPro, Virginia Tech Engineering Education</h3>
                 <p className="text-indigo-200 space-y-2">
                   <span className="block">&#8594;Conducted in-depth sentiment analysis on Reddit posts during key political events such as the Capitol insurrection, the overturning of Roe v. Wade, and the George Floyd protests, uncovering valuable insights into public sentiment trends.</span>
@@ -216,7 +220,7 @@ function App() {
                   <span className="block">&#8594;Collaborated with a multidisciplinary team to refine data collection methodologies, ensuring robust and reproducible results for research findings.</span>
                   <span className="block">&#8594;Presented insights and findings through visual dashboards and reports, enabling stakeholders to better understand sentiment shifts and their implications.</span>
                 </p>
-              </div>  
+                </article>  
             </div>
           </div>
         </div>
@@ -226,6 +230,7 @@ function App() {
       <section
         ref={el => sections.current[3] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
+          id="publications"
       >
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl relative overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
@@ -235,13 +240,13 @@ function App() {
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
             </h2>
             <div className="space-y-6 text-indigo-100">
-              <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
+                <article className="p-6 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg border border-white/5 hover:border-white/10 transition-all duration-300">
                 <h3 className="text-2xl font-semibold text-white">AbsInf: A Lightweight Object to Represent float('inf') in Dijkstra's Algorithm</h3>
                 <p className="text-indigo-200 mb-2">arXiv</p>
                 <p className="text-indigo-200 mb-2">Anjan Bellamkonda, Laksh Bharani and Harivatsan Selvam</p>
                 <p className="text-indigo-200 mb-4">04/2025 - <a href="https://arxiv.org/abs/2504.04302" className="text-indigo-300 hover:text-white transition-colors duration-300">arxiv.org/abs/2504.04302</a></p>
                 <p className="text-indigo-200">Proposed and benchmarked a novel computational construct, Abstract Infinity (AbsInf), achieving up to 19% performance improvement over traditional representations in shortest path algorithms.</p>
-              </div>
+                </article>
             </div>
           </div>
         </div>
@@ -251,6 +256,7 @@ function App() {
       <section
         ref={el => sections.current[4] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
+          id="projects"
       >
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-lg bg-white/10 p-8 rounded-3xl shadow-2xl">
@@ -259,7 +265,7 @@ function App() {
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                <article className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                            hover:transform hover:-translate-y-2 transition-all duration-300
                            border border-transparent hover:border-blue-500/30">
                 <div className="flex items-center mb-4">
@@ -275,12 +281,13 @@ function App() {
                 <a
                   href="https://github.com/AnjanB3012/nalflo"
                   className="inline-flex items-center text-blue-300 hover:text-blue-100 transition-colors"
+                    aria-label="View Nalflo project on GitHub"
                 >
                   Learn more <ExternalLink size={16} className="ml-2" />
                 </a>
-              </div>
+                </article>
 
-              <div className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                <article className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                            hover:transform hover:-translate-y-2 transition-all duration-300
                            border border-transparent hover:border-blue-500/30">
                 <div className="flex items-center mb-4">
@@ -295,12 +302,13 @@ function App() {
                 <a
                   href="https://unischeduler.tech"
                   className="inline-flex items-center text-blue-300 hover:text-blue-100 transition-colors"
+                    aria-label="Visit UniScheduler website"
                 >
                   Learn more <ExternalLink size={16} className="ml-2" />
                 </a>
-              </div>
+                </article>
 
-              <div className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                <article className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                            hover:transform hover:-translate-y-2 transition-all duration-300
                            border border-transparent hover:border-blue-500/30">
                 <div className="flex items-center mb-4">
@@ -317,12 +325,13 @@ function App() {
                 <a
                   href="https://github.com/LakshBharani/AI-Resume-Analyser"
                   className="inline-flex items-center text-blue-300 hover:text-blue-100 transition-colors"
+                    aria-label="View NeuralHire project on GitHub"
                 >
                   Learn more <ExternalLink size={16} className="ml-2" />
                 </a>
-              </div>
+                </article>
 
-              <div className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                <article className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                            hover:transform hover:-translate-y-2 transition-all duration-300
                            border border-transparent hover:border-blue-500/30">
                 <div className="flex items-center mb-4">
@@ -339,12 +348,13 @@ function App() {
                 <a
                   href="https://github.com/AnjanB3012/Email-Phone-Summarizer"
                   className="inline-flex items-center text-blue-300 hover:text-blue-100 transition-colors"
+                    aria-label="View Email Summarizer project on GitHub"
                 >
                   Learn more <ExternalLink size={16} className="ml-2" />
                 </a>
-              </div>
+                </article>
 
-              <div className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                <article className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                            hover:transform hover:-translate-y-2 transition-all duration-300
                            border border-transparent hover:border-blue-500/30">
                 <div className="flex items-center mb-4">
@@ -361,12 +371,13 @@ function App() {
                 <a
                   href="https://github.com/AnjanB3012/Loan-Predictor"
                   className="inline-flex items-center text-blue-300 hover:text-blue-100 transition-colors"
+                    aria-label="View Loan Predictor project on GitHub"
                 >
                   Learn more <ExternalLink size={16} className="ml-2" />
                 </a>
-              </div>
+                </article>
 
-              <div className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
+                <article className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                            hover:transform hover:-translate-y-2 transition-all duration-300
                            border border-transparent hover:border-blue-500/30">
                 <div className="flex items-center mb-4">
@@ -383,10 +394,11 @@ function App() {
                 <a
                   href="https://github.com/AnjanB3012/warehouse-zip-locator"
                   className="inline-flex items-center text-blue-300 hover:text-blue-100 transition-colors"
+                    aria-label="View Warehouse Zip Locator project on GitHub"
                 >
                   Learn more <ExternalLink size={16} className="ml-2" />
                 </a>
-              </div>
+                </article>
             </div>
           </div>
         </div>
@@ -396,6 +408,7 @@ function App() {
       <section
         ref={el => sections.current[5] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
+          id="credentials"
       >
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-lg bg-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
@@ -436,7 +449,7 @@ function App() {
                   date: "June 2025"
                 }
               ].map((cert, i) => (
-                <div
+                  <article
                   key={i}
                   className="group backdrop-blur-md bg-white/5 p-6 rounded-2xl shadow-xl 
                             hover:transform hover:-translate-y-2 transition-all duration-300
@@ -449,7 +462,7 @@ function App() {
                       <p className="text-blue-200 text-sm">{cert.issuer} &middot; {cert.date}</p>
                     </div>
                   </div>
-                </div>
+                  </article>
               ))}
             </div>
           </div>
@@ -457,7 +470,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section ref={el => sections.current[6] = el} className="py-20 opacity-0 transition-opacity duration-1000">
+        <section ref={el => sections.current[6] = el} className="py-20 opacity-0 transition-opacity duration-1000" id="skills">
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-lg bg-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
             <h2 className="text-4xl font-bold text-white mb-8 text-center relative">
@@ -466,7 +479,7 @@ function App() {
             </h2>
             <div className="space-y-8">
               {/* Programming Languages */}
-              <div>
+                <section>
                 <h3 className="text-2xl font-semibold text-white mb-4 text-center">Programming Languages</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-blue-100 text-center">
                   <div className="p-4 bg-blue-500/10 rounded-lg">Python</div>
@@ -478,20 +491,20 @@ function App() {
                   <div className="p-4 bg-blue-500/10 rounded-lg">HTML</div>
                   <div className="p-4 bg-blue-500/10 rounded-lg">CSS</div>
                 </div>
-              </div>
+                </section>
 
               {/* Web Development */}
-              <div>
+                <section>
                 <h3 className="text-2xl font-semibold text-white mb-4 text-center">Web Development</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-blue-100 text-center">
                   <div className="p-4 bg-blue-500/10 rounded-lg">React.js</div>
                   <div className="p-4 bg-blue-500/10 rounded-lg">Flask</div>
                   <div className="p-4 bg-blue-500/10 rounded-lg">SQL</div>
                 </div>
-              </div>
+                </section>
 
               {/* Cloud & DevOps */}
-              <div>
+                <section>
                 <h3 className="text-2xl font-semibold text-white mb-4 text-center">Cloud & DevOps</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-blue-100 text-center">
                   <div className="p-4 bg-blue-500/10 rounded-lg">Microsoft Azure</div>
@@ -500,10 +513,10 @@ function App() {
                   <div className="p-4 bg-blue-500/10 rounded-lg">Docker</div>
                   <div className="p-4 bg-blue-500/10 rounded-lg">Linux</div>
                 </div>
-              </div>
+                </section>
 
               {/* AI & Machine Learning */}
-              <div>
+                <section>
                 <h3 className="text-2xl font-semibold text-white mb-4 text-center">AI & Machine Learning</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-blue-100 text-center">
                   <div className="p-4 bg-blue-500/10 rounded-lg">TensorFlow</div>
@@ -517,10 +530,10 @@ function App() {
                   <div className="p-4 bg-blue-500/10 rounded-lg">Model Fine-tuning</div>
                   <div className="p-4 bg-blue-500/10 rounded-lg">Pandas</div>
                 </div>
-              </div>
+                </section>
 
               {/* Development Tools & Practices */}
-              <div>
+                <section>
                 <h3 className="text-2xl font-semibold text-white mb-4 text-center">Development Tools & Practices</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-blue-100 text-center">
                   <div className="p-4 bg-blue-500/10 rounded-lg">Android Studio</div>
@@ -533,7 +546,7 @@ function App() {
                   <div className="p-4 bg-blue-500/10 rounded-lg">Statistics</div>
                   <div className="p-4 bg-blue-500/10 rounded-lg">Financial Modelling</div>
                 </div>
-              </div>
+                </section>
             </div>
           </div>
         </div>
@@ -543,6 +556,7 @@ function App() {
       <section
         ref={el => sections.current[7] = el}
         className="py-20 opacity-0 transition-opacity duration-1000"
+          id="contact"
       >
         <div className="container mx-auto px-4">
           <div className="backdrop-blur-lg bg-white/10 p-8 rounded-3xl shadow-2xl">
@@ -550,11 +564,12 @@ function App() {
               Get in Touch
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
             </h2>
-            <div className="flex justify-center space-x-8">
+              <nav className="flex justify-center space-x-8" aria-label="Contact information">
               <a
                 href="mailto:anjanbellamkonda@vt.edu"
                 className="flex items-center space-x-2 text-white hover:text-blue-300 transition-colors
                          hover:transform hover:scale-105"
+                  aria-label="Send email to anjanbellamkonda@vt.edu"
               >
                 <Mail size={24} />
                 <span>Email</span>
@@ -563,6 +578,7 @@ function App() {
                 href="https://www.linkedin.com/in/anjan-bellamkonda/"
                 className="flex items-center space-x-2 text-white hover:text-blue-300 transition-colors
                          hover:transform hover:scale-105"
+                  aria-label="Connect on LinkedIn"
               >
                 <Linkedin size={24} />
                 <span>LinkedIn</span>
@@ -571,14 +587,16 @@ function App() {
                 href="https://github.com/AnjanB3012"
                 className="flex items-center space-x-2 text-white hover:text-blue-300 transition-colors
                          hover:transform hover:scale-105"
+                  aria-label="View GitHub profile"
               >
                 <Github size={24} />
                 <span>GitHub</span>
               </a>
-            </div>
+              </nav>
           </div>
         </div>
       </section>
+      </main>
     </div>
   );
 }

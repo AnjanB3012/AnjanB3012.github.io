@@ -1,0 +1,27 @@
+{
+  "name": "Anjan Bellamkonda - ML Engineer & Full Stack Developer",
+  "short_name": "Anjan Bellamkonda",
+  "description": "ML Engineer and Full Stack Developer specializing in AI, machine learning, and software development. Computer Science student at Virginia Tech.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "education", "business"],
+  "lang": "en",
+  "dir": "ltr"
+} 

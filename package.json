@@ -1,7 +1,10 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "anjan-bellamkonda-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Personal portfolio website of Anjan Bellamkonda - ML Engineer and Full Stack Developer specializing in AI, machine learning, and software development",
+  "keywords": ["portfolio", "ml-engineer", "full-stack-developer", "ai", "machine-learning", "virginia-tech", "react", "typescript"],
+  "author": "Anjan Bellamkonda <anjanbellamkonda@vt.edu>",
   "homepage": "https://anjanb3012.github.io/",
   "type": "module",
   "scripts": {
